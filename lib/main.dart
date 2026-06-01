@@ -20,6 +20,7 @@ import 'package:talker/talker.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_riverpod_logger/talker_riverpod_logger.dart';
 
+import 'api/api.dart';
 import 'generated/env.g.dart';
 import 'generated/i18n.g.dart';
 import 'providers/api/api.dart';

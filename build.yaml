@@ -17,6 +17,7 @@ targets:
         enabled: true
         generate_for:
           include:
+            - lib/api/**.dart
             - lib/providers/**.dart
 
       drift_dev:
