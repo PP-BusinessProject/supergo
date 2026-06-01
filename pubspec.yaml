@@ -151,9 +151,9 @@ flutter_launcher_icons:
   image_path: source/icon.png
 
 flutter_native_splash:
-  color: "#ffffff"
-  background_image: source/assets/splash.png
-  # image: source/assets/logo.png
+  color: "#080e20"
+  # background_image: source/assets/splash.png
+  image: source/assets/logo.png
   fullscreen: true
 
 flutter_gen:
