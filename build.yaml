@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=./build.yaml
+targets:
+  $default:
+    sources:
+      include:
+        - $package$
+        - lib/$lib$
+        - lib/**.dart
+        - source/**
+        - pubspec.yaml
+        - .env
+      exclude:
+        - '**.*.dart'
+
+    builders:
+      dart_mappable_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/providers/**.dart
+
+      drift_dev:
+        enabled: true
+        generate_for:
+          include:
+            - lib/database/**.dart
+
+      enven:
+        enabled: true
+
+      flutter_gen_runner:
+        enabled: true
+        options:
+          output: lib/generated/
+          integrations:
+            flutter_svg: true
+          assets:
+            enabled: true
+          fonts:
+            enabled: true
+          colors:
+            enabled: true
+
+      go_router_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/routes/**.dart
+
+      mix_generator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/styles/**.dart
+
+      slang_build_runner:
+        enabled: true
+        options:
+          base_locale: en-US
+          class_name: I18N
+          enum_name: I18NLocale
+          flat_map: false
+          input_directory: source/i18n
+          input_file_pattern: .yaml
+          key_case: camel
+          key_map_case: camel
+          output_directory: lib/generated/
+          output_file_name: i18n.g.dart
+          param_case: camel
+          pluralization:
+            auto: off
+
+      retrofit_generator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**.dart
+        options:
+          format_output: true
+          auto_cast_response: true
+          use_result: false
+
+      riverpod_generator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/providers/**.dart
